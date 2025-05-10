@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	member
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% for member in member_list %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                        Country name: {{ member.country_name }}
+                </h5>
+                <p class="card-text"><b> Population:</b> {{ member.population }}</p>
+                <p class="card-text"><b> Bio:</b> {{ member.bio }}</p>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

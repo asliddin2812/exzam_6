@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}NATO A'zosi Ma'lumotlarini Tahrirlash{% endblock %}
+
+{% block content %}
+    <h1>NATO A'zosi Ma'lumotlarini Tahrirlash</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        {{ form|crispy }}
+        
+        <button type="submit">Saqlash</button>
+    </form>
+
+    <a href="{% url 'index' %}">Orqaga</a>
+{% endblock %}
